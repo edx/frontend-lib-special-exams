@@ -22,12 +22,14 @@
     "dist/"
   ],
   "sideEffects": false,
+  "browserslist": [
+    "extends @edx/browserslist-config"
+  ],
   "scripts": {
     "build": "make build",
     "prepublishOnly": "npm run build",
     "semantic-release": "semantic-release",
     "i18n_extract": "BABEL_ENV=i18n fedx-scripts babel src --quiet > /dev/null",
-    "is-es5": "es-check es5 ./dist/*.js",
     "lint": "fedx-scripts eslint --ext .js --ext .jsx .",
     "snapshot": "fedx-scripts jest --updateSnapshot",
     "test": "fedx-scripts jest --coverage --passWithNoTests"
@@ -64,6 +66,7 @@
     "@reduxjs/toolkit": "^1.5.1"
   },
   "devDependencies": {
+    "@edx/browserslist-config": "^1.0.2",
     "@edx/frontend-build": "^5.6.11",
     "@edx/frontend-platform": "1.8.4",
     "@edx/paragon": "19.14.1",
@@ -72,21 +75,19 @@
     "@testing-library/react": "10.3.0",
     "axios-mock-adapter": "1.18.2",
     "codecov": "3.7.2",
-    "es-check": "5.1.4",
     "glob": "7.1.6",
     "husky": "3.1.0",
     "jest": "24.9.0",
     "prop-types": "15.7.2",
     "react": "16.12.0",
     "react-dom": "16.12.0",
+    "react-intl": "2.9.0",
     "react-redux": "7.1.3",
     "react-router": "5.1.2",
     "react-router-dom": "5.1.2",
-    "redux": "4.0.5",
-    "@reduxjs/toolkit": "^1.5.1",
     "reactifex": "1.1.1",
-    "react-intl": "2.9.0",
-    "semantic-release": "17.2.3",
-    "rosie": "2.0.1"
+    "redux": "4.0.5",
+    "rosie": "2.0.1",
+    "semantic-release": "17.2.3"
   }
 }
